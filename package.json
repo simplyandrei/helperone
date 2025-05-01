@@ -1,0 +1,35 @@
+{
+  "name": "helperone",
+  "version": "1.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "Library",
+    "Math Utilities",
+    "String Manipulation",
+    "Array Helper"
+  ],
+  "author": "reiiii",
+  "license": "MIT",
+  "description": "",
+  "exports": {
+    "./src/String": {
+      "import": "./dist/math/index.mjs",
+      "require": "./dist/math/index.js",
+      "types": "./dist/math/index.d.ts"
+    },
+    "./src/Math": {
+      "import": "./dist/math/index.mjs",
+      "require": "./dist/math/index.js",
+      "types": "./dist/math/index.d.ts"
+    }
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
