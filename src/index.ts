@@ -15,3 +15,11 @@ export * from './String/RStringProperties';
 export * from './String/RStringAdvanced';
 
 // Exporting of all modules in the Array Library
+export * from './ArrayHelpers/RArray';
+export * from './ArrayHelpers/RArrayAdvanced';
+export * from './ArrayHelpers/RArrayAlgorithm';
+//
+//
+//
+//
+//
