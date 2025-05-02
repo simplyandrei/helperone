@@ -18,8 +18,4 @@ export * from './String/RStringAdvanced';
 export * from './ArrayHelpers/RArray';
 export * from './ArrayHelpers/RArrayAdvanced';
 export * from './ArrayHelpers/RArrayAlgorithm';
-//
-//
-//
-//
-//
+export * from './ArrayHelpers/RArray2D';

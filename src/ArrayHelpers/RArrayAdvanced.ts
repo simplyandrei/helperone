@@ -249,3 +249,104 @@ export function array_delete_at<T>(array: T[], index: number): T[] {
     }
     return [...array.slice(0, index), ...array.slice(index + 1)];
 }
+
+/**
+ * Concatenates two arrays into a single array.
+ * 
+ * @template T - The type of elements in the arrays.
+ * @param array1 - The first array.
+ * @param array2 - The second array.
+ * @returns A new array containing all elements from array1 followed by all elements from array2.
+ */
+export function array_merge<T>(array1: T[], array2: T[]): T[] {
+    return [...array1, ...array2];
+}
+
+/**
+ * Splits an array into two arrays at the specified index.
+ * 
+ * @template T - The type of elements in the array.
+ * @param array - The array to split.
+ * @param index - The index at which to split the array.
+ * @returns A tuple containing two arrays: the first with elements before the index, and the second with elements from the index onward.
+ */
+export function array_split<T>(array: T[], index: number): [T[], T[]] {
+    if (index < 0 || index > array.length) {
+        throw new RangeError('Index out of bounds');
+    }
+    return [array.slice(0, index), array.slice(index)];
+}
+
+/**
+ * Splits an array into chunks of a specified size.
+ * 
+ * @template T - The type of elements in the array.
+ * @param array - The array to split into chunks.
+ * @param size - The size of each chunk.
+ * @returns An array of chunks, where each chunk is an array of elements.
+ */
+export function array_chunk<T>(array: T[], size: number): T[][] {
+    if (size <= 0) {
+        throw new RangeError('Chunk size must be greater than 0');
+    }
+    const chunks: T[][] = [];
+    for (let i = 0; i < array.length; i += size) {
+        chunks.push(array.slice(i, i + size));
+    }
+    return chunks;
+}
+
+/**
+ * Computes the union of two arrays, removing duplicates.
+ * 
+ * @template T - The type of elements in the arrays.
+ * @param array1 - The first array.
+ * @param array2 - The second array.
+ * @returns A new array containing the union of the two arrays, with duplicates removed.
+ */
+export function array_union<T>(array1: T[], array2: T[]): T[] {
+    return Array.from(new Set([...array1, ...array2]));
+}
+
+/**
+ * Computes the intersection of two arrays, returning common elements.
+ * 
+ * @template T - The type of elements in the arrays.
+ * @param array1 - The first array.
+ * @param array2 - The second array.
+ * @returns A new array containing the common elements of the two arrays.
+ */
+export function array_intersection<T>(array1: T[], array2: T[]): T[] {
+    const set2 = new Set(array2);
+    return array1.filter(item => set2.has(item));
+}
+
+/**
+ * Computes the difference of two arrays, returning elements in the first array that are not in the second array.
+ * 
+ * @template T - The type of elements in the arrays.
+ * @param array1 - The first array.
+ * @param array2 - The second array.
+ * @returns A new array containing elements in array1 that are not in array2.
+ */
+export function array_differences<T>(array1: T[], array2: T[]): T[] {
+    const set2 = new Set(array2);
+    return array1.filter(item => !set2.has(item));
+}
+
+/**
+ * Computes the asymmetric difference of two arrays, returning elements that are in either array but not in both.
+ * 
+ * @template T - The type of elements in the arrays.
+ * @param array1 - The first array.
+ * @param array2 - The second array.
+ * @returns A new array containing elements that are in either array1 or array2 but not in both.
+ */
+export function array_asymmetric_difference<T>(array1: T[], array2: T[]): T[] {
+    const set1 = new Set(array1);
+    const set2 = new Set(array2);
+    return [
+        ...array1.filter(item => !set2.has(item)),
+        ...array2.filter(item => !set1.has(item))
+    ];
+}
