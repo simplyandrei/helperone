@@ -1,5 +1,8 @@
 # HelperOne JS
 
+![helperone](https://socialify.git.ci/simplyandrei/helperone/image?custom_description=A+Javascript+Library+for+Math%2C+String+and+Array.&description=1&font=Jost&language=1&name=1&owner=1&pattern=Plus&theme=Light)
+
+
 **HelperOne** is a lightweight and powerful JavaScript utility library that provides a collection of essential functions for **String**, **Math**, and **Array manipulation**. Whether you're working on a small project or a large-scale application, HelperOne simplifies common operations with clean, reusable helpers that boost productivity and code readability.
 
 **Features:**
@@ -33,6 +36,11 @@
     import { functionName } from 'helperone';
     
     functionName();
+
+## API References
+
+*This section is currently under development. Please check back soon for updates!*
+
 
 ## Author
 
