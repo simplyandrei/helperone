@@ -6,7 +6,7 @@
  * @param target - The element to search for in the array.
  * @returns The index of the target element if found; otherwise, returns -1.
  */
-export function arrayLinearSearch<T>(array: T[], target: T): number {
+export function array_linear_search<T>(array: T[], target: T): number {
     for (let i = 0; i < array.length; i++) {
         if (array[i] === target) {
             return i;
@@ -23,7 +23,7 @@ export function arrayLinearSearch<T>(array: T[], target: T): number {
  * @param target - The element to search for in the array.
  * @returns The index of the target element if found; otherwise, returns -1.
  */
-export function arrayBinarySearch<T>(array: T[], target: T): number {
+export function array_binary_search<T>(array: T[], target: T): number {
     let left = 0;
     let right = array.length - 1;
 
@@ -48,7 +48,7 @@ export function arrayBinarySearch<T>(array: T[], target: T): number {
  * @param array - The array to search for a peak element.
  * @returns The index of a peak element if found; otherwise, returns -1 if the array is empty.
  */
-export function arrayFindPeak(array: number[]): number {
+export function array_find_peak(array: number[]): number {
     if (array.length === 0) {
         return -1; // Return -1 if the array is empty
     }
@@ -72,7 +72,7 @@ export function arrayFindPeak(array: number[]): number {
  * @param array - The array to search for the majority element.
  * @returns The majority element if found; otherwise, returns null.
  */
-export function arrayMajorityElement<T>(array: T[]): T | null {
+export function array_majority_element<T>(array: T[]): T | null {
     const countMap = new Map<T, number>();
     const majorityCount = Math.floor(array.length / 2);
 
@@ -96,7 +96,7 @@ export function arrayMajorityElement<T>(array: T[]): T | null {
  * @param k - The 1-based index of the smallest element to find.
  * @returns The k-th smallest element if found; otherwise, throws an error if k is out of bounds.
  */
-export function arrayKthSmallest<T>(array: T[], k: number): T {
+export function array_kth_smallest<T>(array: T[], k: number): T {
     if (k < 1 || k > array.length) {
         throw new Error("k is out of bounds");
     }
@@ -145,7 +145,7 @@ export function arrayKthSmallest<T>(array: T[], k: number): T {
  * @param k - The 1-based index of the largest element to find.
  * @returns The k-th largest element if found; otherwise, throws an error if k is out of bounds.
  */
-export function arrayKthLargest<T>(array: T[], k: number): T {
+export function array_kth_largest<T>(array: T[], k: number): T {
     if (k < 1 || k > array.length) {
         throw new Error("k is out of bounds");
     }
